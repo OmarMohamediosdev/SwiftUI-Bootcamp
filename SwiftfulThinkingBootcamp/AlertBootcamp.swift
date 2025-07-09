@@ -47,7 +47,13 @@ struct AlertBootcamp: View {
     func getAlert() -> Alert {
         switch alertType {
         case .error:
-            return Alert(title: Text("There was an error!"))
+//            return Alert(title: Text("There was an error!"))
+            return Alert(title: Text("There was an error!"),
+                         message: Text("There was an errorrrrrrrr!"),
+                         primaryButton: .destructive(Text("DELETE!"), action: {
+                print("Deleted")
+            }),
+                         secondaryButton: .cancel())
         case .success:
             return Alert(title: Text("This was a success!"), message: nil, dismissButton: .default(Text("OK"), action: {
                 backgroundColor = .green
